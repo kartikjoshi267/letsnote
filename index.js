@@ -21,6 +21,6 @@ if (process.env.NODE_ENV == "production"){
 
 
 app.listen(port, (error) => {
-    console.log(`Server started successfully at http://localhost:${port}`);
+    console.log(`Server started successfully at http://letsnote.herokuapp.com:${port}`);
     connectToDatabase();
 });
