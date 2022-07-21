@@ -4,6 +4,7 @@ const cors = require('cors');
 require('dotenv').config();
 const auth = require('./routes/auth');
 const notes = require('./routes/notes');
+const path = require('path')
 
 const port = process.env.PORT || 80;
 
@@ -15,8 +16,12 @@ app.use('/api/auth', auth);
 app.use('/api/notes', notes);
 
 // Heroku
-if (process.env.NODE_ENV == "production"){
-    app.use(express.static("client/build"));
+if (process.env.NODE_ENV === "production"){
+    app.use(express.static(path.join(__dirname, '/client/build')))
+
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+    });
 }
 
 
