@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import loginContext from './Context';
 
 function LoginContextProvider(props) {
-    const hostname = process.env.HOSTNAME;
 
     // State to check whether you are logged in or not
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -58,7 +57,7 @@ function LoginContextProvider(props) {
 
     // Function to make POST Request for logging in a user
     const loginRequest = async () => {
-        await fetch(`${hostname}/api/auth/login`,
+        await fetch(`/api/auth/login`,
             {
                 method: 'POST',
                 headers: {
@@ -89,7 +88,7 @@ function LoginContextProvider(props) {
 
         // Function to make POST Request for authenticating a user
         const authenticate = async () => {
-            await fetch(`${hostname}/api/auth/getuser`,
+            await fetch(`/api/auth/getuser`,
             {
                 method: 'POST',
                 headers: {
@@ -110,7 +109,7 @@ function LoginContextProvider(props) {
 
     // Function to make POST Request for creating a new user
     const signUpRequest = async () => {
-        await fetch(`${hostname}/api/auth/createuser`,
+        await fetch(`/api/auth/createuser`,
             {
                 method: 'POST',
                 headers: {
@@ -143,7 +142,7 @@ function LoginContextProvider(props) {
 
     // Function to fetch all the notes of a particular user
     const fetchNotes = async () => {
-        await fetch(`${hostname}/api/notes/fetchnotes`,
+        await fetch(`/api/notes/fetchnotes`,
             {
                 method: 'GET',
                 headers: {
@@ -165,7 +164,7 @@ function LoginContextProvider(props) {
 
     // Function to add a note of a particular user
     const addNote = async () => {
-        await fetch(`${hostname}/api/notes/addnote`,
+        await fetch(`/api/notes/addnote`,
             {
                 method: 'POST',
                 headers: {
@@ -195,7 +194,7 @@ function LoginContextProvider(props) {
 
     // Function to update an existing note of a particular user
     const editNote = async (id) => {
-        await fetch(`${hostname}/api/notes/updatenote/${id}`,
+        await fetch(`/api/notes/updatenote/${id}`,
             {
                 method: 'POST',
                 headers: {
@@ -224,7 +223,7 @@ function LoginContextProvider(props) {
 
     // Function to delete an existing note of a particular user
     const deleteNote = async (id) => {
-        await fetch(`${hostname}/api/notes/deletenote/${id}`,
+        await fetch(`/api/notes/deletenote/${id}`,
             {
                 method: 'DELETE',
                 headers: {
