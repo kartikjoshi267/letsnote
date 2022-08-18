@@ -9,10 +9,6 @@ export default function NavbarComp(props) {
 
     const context = useContext(loginContext);
     const { isLoggedIn, name, signOut, addVisitor } = context;
-    
-    document.onload = () => {
-        addVisitor();
-    }
 
     return (
         <>
