@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 let i = 0;
 const Person = new Schema({
     sNo: {
-        type: Int16Array,
+        type: Number,
         default: i++
     },
     date: {
