@@ -4,6 +4,7 @@ const cors = require('cors');
 require('dotenv').config();
 const auth = require('./routes/auth');
 const notes = require('./routes/notes');
+const notes = require('./routes/counter');
 const path = require('path')
 
 const port = process.env.PORT || 80;
@@ -14,6 +15,7 @@ app.use(cors())
 
 app.use('/api/auth', auth);
 app.use('/api/notes', notes);
+app.use('/api/count', counter);
 
 // Heroku
 if (process.env.NODE_ENV === "production"){
