@@ -4,7 +4,7 @@ const cors = require('cors');
 require('dotenv').config();
 const auth = require('./routes/auth');
 const notes = require('./routes/notes');
-const notes = require('./routes/counter');
+const counter = require('./routes/counter');
 const path = require('path')
 
 const port = process.env.PORT || 8000;
