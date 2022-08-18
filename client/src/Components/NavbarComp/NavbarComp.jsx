@@ -8,7 +8,8 @@ export default function NavbarComp(props) {
     document.title = "Let'sNote | " + ((location.pathname === '/') ? "Home" : (location.pathname === '/about') ? "About" : (location.pathname === '/login') ? "Login" : (location.pathname === '/notes') ? "Notes" : "404 | Not Found");
 
     const context = useContext(loginContext);
-    const { isLoggedIn, name, signOut } = context
+    const { isLoggedIn, name, signOut, addVisitor } = context;
+    addVisitor();
 
     return (
         <>
