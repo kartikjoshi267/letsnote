@@ -7,7 +7,7 @@ const notes = require('./routes/notes');
 const notes = require('./routes/counter');
 const path = require('path')
 
-const port = process.env.PORT || 80;
+const port = process.env.PORT || 8000;
 
 const app = express();
 app.use(express.json());
@@ -18,16 +18,22 @@ app.use('/api/notes', notes);
 app.use('/api/count', counter);
 
 // Heroku
-if (process.env.NODE_ENV === "production"){
+__dirname = path.resolve();
+if (process.env.NODE_ENV === 'production'){
     app.use(express.static(path.join(__dirname, '/client/build')))
 
     app.get('*', (req, res) => {
         res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
     });
 }
+else{
+    app.get('/', (req, res) => {
+        res.send('Server is Running! 🚀');
+    });
+}
 
 
 app.listen(port, (error) => {
-    console.log(`Server started successfully at http://letsnote.herokuapp.com:${port}`);
+    console.log(`Server started successfully on port ${port}`);
     connectToDatabase();
 });

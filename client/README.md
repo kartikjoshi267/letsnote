@@ -1,4 +1,4 @@
-# **Let'sNote ![image](/public/favicon.ico)**
+# **Let'sNote ![image](./public/favicon.ico)**
 
 This is my first **M E R N** project which is a note-taking application in which:
 
@@ -21,6 +21,6 @@ ___
 
 ## **Demonstration**
 
-![main](/public/demo.gif)
+![main](./public/demo.gif)
 
 Hope you like it !

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import loginContext from './Context';
 
 function LoginContextProvider(props) {
-    const hostname = process.env.HOSTNAME;
 
     // State to check whether you are logged in or not
     const [isLoggedIn, setIsLoggedIn] = useState(false);
